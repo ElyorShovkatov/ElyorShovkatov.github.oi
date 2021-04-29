@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto',sans-serif;
+  overflow-y: hidden;
+}
+
+.active i{
+  color: rgb(185, 0, 0) !important;
+}
+
+/*============================== navbar =============================  */
+.navbar{
+  background-color: rgb(100, 100, 100);
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 3px 0px 5px black;
+  z-index: 99;
+}
+.navbar .logo img{
+  width: 90%;
+}
+.navbar .links{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navbar .links i{
+  display: block;
+  font-size: 25px;
+  color: aqua;
+}
+.navbar .links span{
+  display: none;
+  color: antiquewhite;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 25px;
+  font-size: 14px;
+  color: aqua;
+}
+.navbar .social i{
+  display: block;
+  font-size: 22px;
+  color: aqua;
+}
+.navbar .links li{
+  margin-bottom: 45px;
+}
+.navbar .social{
+  margin: 30px 0 15px;
+}
+.navbar .social li{
+  margin-bottom: 20px;
+}
+.social li:hover i{
+  color: rgb(35, 35, 255);
+}
+.navbar .bulb{
+  background: inherit;
+  border: 2px solid black;
+  padding: 5px 10px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  cursor: pointer;
+}
+.navbar .bulb i{
+  color: black;
+  font-size: 20px;
+}
+.bulb_active{
+  opacity: 1;
+}
+
+/*============================== main - HOME =============================  */
+.main{
+  background: #eeeeee;
+  width: 100%;
+  height: 100vh;
+}
+#stars { 
+  width:100%;
+  height: 100vh;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  }
+
+  /*================================ loader ============================== */
+.loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #666;
+  background-image: radial-gradient(#888, #555);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader::before {
+  width: 265px;
+  height: 265px;
+  border: 11px solid rgba(0,0,0,0);
+}
+.loader::after {
+  width: 95px;
+  height: 95px;
+  border: 8px solid rgba(0,0,0,0);
+}
+.loader::before {
+  width: 265px;
+  height: 265px;
+  border: 11px solid rgba(0,0,0,0);
+}
+.loader::before,
+  ::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation: tracks 10s linear forwards;
+    -webkit-animation: tracks 10s linear forwards;
+}
+.car {
+  position: relative;
+  z-index: 1;
+  transform-origin: bottom bottom;
+  animation: drift 3.2s linear infinite;
+}
+
+.car::before {
+  background: #eee;
+  animation: smoke .5s linear infinite;
+}  
+
+.car::after {
+  background: #eee;
+  animation: smoke .5s linear .7s infinite;
+}
+
+svg {
+  position: relative;
+  width: 150px;
+  padding: 0 0 150px;
+  z-index: 1;
+}
+
+@keyframes smoke {
+  from {
+    left: 65px;
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+  to {
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes tracks {
+  from {
+    border-color: rgba(0,0,0,0);
+  }
+  to {
+    border-color: rgba(0,0,0,1);
+  }
+}
